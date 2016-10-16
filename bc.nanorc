@@ -1,0 +1,34 @@
+## Syntax Highlight for Gnu bc.
+
+syntax "bc" "\.bc$"
+magic "bc.*script text"
+comment "/*|*/|#"
+
+# Declarations
+color green "\<(auto)\>"
+
+# Block Elements
+color brightcyan "\<(define)\>"
+
+# Flow control.
+color green "\<(for|if|while|else)\>"
+color green "\<(break|continue|halt|return|quit)\>"
+
+# Special
+color red "\<(limits|warranty|scale)\>"
+
+# Operators
+color yellow "[.:;,+*|=!\%]" "<" ">" "/" "-" "&" 
+
+#Parenthetical Color
+color brightmagenta "[(){}]" "\[" "\]"
+
+# Comments.
+color brightblue "(^|[[:space:]])#.*$"
+color brightblue start="/\*" end="\*/"
+
+# Reminders.
+color ,yellow "\<(FIXME|TODO|XXX)\>"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
